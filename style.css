@@ -101,6 +101,7 @@ body {
   font-size: 15px;
   transition: color 0.3s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
 .input-wrapper input,
@@ -117,6 +118,16 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Custom Arrow for Select Dropdown */
+.input-wrapper select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
 /* Pseudo-class (:focus & :hover) загварчлал */
 .input-wrapper input:focus,
 .input-wrapper select:focus {
@@ -124,7 +135,7 @@ body {
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 
-.input-wrapper input:focus + .input-icon,
+.input-wrapper input:focus ~ .input-icon,
 .input-wrapper select:focus ~ .input-icon,
 .input-wrapper:focus-within .input-icon {
   color: var(--primary-color);
@@ -171,6 +182,7 @@ body {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   pointer-events: none;
+  z-index: 10;
 }
 
 .tooltip::after {
@@ -201,6 +213,7 @@ body {
 .custom-checkbox {
   display: flex;
   align-items: center;
+  gap: 10px;
   font-size: 13px;
   color: var(--text-sub);
   cursor: pointer;
@@ -208,7 +221,6 @@ body {
 }
 
 .custom-checkbox input {
-  margin-right: 10px;
   accent-color: var(--primary-color);
   width: 16px;
   height: 16px;
