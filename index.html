@@ -3,95 +3,679 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаборатори 03 - Баяжуулсан HTML Form</title>
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts: Inter -->
+
+  <title>Бүртгэлийн систем | Лаборатори 03</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="card-container">
-    <!-- Header хэсэг -->
-    <div class="card-header">
-      <h2>Бүртгэлийн Форм</h2>
-      <p>Лаборатори 03-ын гүнзгийрүүлсэн даалгавар</p>
+  <!-- Decorative Background -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+  <div class="bg-circle circle-3"></div>
+
+  <main class="page-wrapper">
+
+    <!-- LEFT INFORMATION PANEL -->
+    <section class="info-panel">
+
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+          <h2>Edu<span>Form</span></h2>
+          <p>Student Portal</p>
+        </div>
+      </div>
+
+      <div class="info-content">
+
+        <span class="small-badge">
+          <i class="fa-solid fa-sparkles"></i>
+          LABORATORY 03
+        </span>
+
+        <h1>
+          Суралцагчийн
+          <span>бүртгэлийн систем</span>
+        </h1>
+
+        <p class="description">
+          Энэхүү формоор өөрийн үндсэн мэдээллийг оруулж,
+          сургалтын системд бүртгүүлэх боломжтой.
+        </p>
+
+        <div class="feature-list">
+
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+              <h3>Аюулгүй бүртгэл</h3>
+              <p>Таны мэдээллийг хамгаалсан систем</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon purple">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+              <h3>Хялбар ашиглалт</h3>
+              <p>Энгийн бөгөөд хурдан бүртгэл</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon pink">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+              <h3>Баталгаажуулалт</h3>
+              <p>Имэйлээр мэдээллээ баталгаажуулна</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Secure</span>
+          </div>
+
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Access</span>
+          </div>
+
+          <div class="stat">
+            <strong>Easy</strong>
+            <span>To Use</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 EduForm · Laboratory 03
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT FORM CARD -->
+    <section class="form-card">
+
+      <!-- Header -->
+      <div class="form-header">
+
+        <div>
+          <span class="form-label">WELCOME 👋</span>
+
+          <h2>Бүртгэл үүсгэх</h2>
+
+          <p>
+            Доорх мэдээллийг үнэн зөв бөглөнө үү.
+          </p>
+        </div>
+
+        <div class="header-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+      </div>
+
+
+      <!-- Progress -->
+      <div class="progress-area">
+
+        <div class="progress-info">
+          <span>Бүртгэлийн явц</span>
+          <strong>75%</strong>
+        </div>
+
+        <div class="progress-bar">
+          <span></span>
+        </div>
+
+      </div>
+
+
+      <form id="registerForm">
+
+        <!-- NAME -->
+        <div class="form-group">
+
+          <label for="fullname">
+            Овог нэр
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-user input-icon"></i>
+
+            <input
+              type="text"
+              id="fullname"
+              placeholder="Батболдын Тэмүүлэн"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="form-group">
+
+          <label for="email">
+            И-мэйл хаяг
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrapper relative-box">
+
+            <i class="fa-solid fa-envelope input-icon"></i>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="name@example.com"
+              required
+            >
+
+            <span class="badge badge-success">
+              <i class="fa-solid fa-check"></i>
+              Verified
+            </span>
+
+            <div class="tooltip">
+              <i class="fa-solid fa-circle-info"></i>
+              Сургуулийн и-мэйл ашиглана уу
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHONE -->
+        <div class="form-group">
+
+          <label for="phone">
+            Утасны дугаар
+          </label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-phone input-icon"></i>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="99112233"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+          <label for="password">
+            Нууц үг
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrapper password-wrapper">
+
+            <i class="fa-solid fa-lock input-icon"></i>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Нууц үгээ оруулна уу"
+              required
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              onclick="togglePassword()">
+
+              <i id="eyeIcon" class="fa-solid fa-eye"></i>
+
+            </button>
+
+          </div>
+
+          <!-- Password Strength -->
+          <div class="password-strength">
+
+            <div class="strength-bars">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small id="strengthText">
+              Нууц үгийн хүч: -
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- TWO COLUMNS -->
+        <div class="two-columns">
+
+          <!-- ROLE -->
+          <div class="form-group">
+
+            <label for="role">
+              Хэрэглэгчийн төрөл
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="fa-solid fa-graduation-cap input-icon"></i>
+
+              <select id="role">
+
+                <option value="student">
+                  Оюутан
+                </option>
+
+                <option value="teacher">
+                  Багш
+                </option>
+
+                <option value="guest">
+                  Зочин
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <!-- GENDER -->
+          <div class="form-group">
+
+            <label for="gender">
+              Хүйс
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="fa-solid fa-venus-mars input-icon"></i>
+
+              <select id="gender">
+
+                <option value="">
+                  Сонгох
+                </option>
+
+                <option>
+                  Эрэгтэй
+                </option>
+
+                <option>
+                  Эмэгтэй
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MAJOR -->
+        <div class="form-group">
+
+          <label for="major">
+            Мэргэжил / Хөтөлбөр
+          </label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-book-open input-icon"></i>
+
+            <select id="major">
+
+              <option>
+                Мэдээллийн технологи
+              </option>
+
+              <option>
+                Программ хангамж
+              </option>
+
+              <option>
+                Нягтлан бодох бүртгэл
+              </option>
+
+              <option>
+                Бизнесийн удирдлага
+              </option>
+
+              <option>
+                Санхүү
+              </option>
+
+              <option>
+                Бусад
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- BIRTH DATE -->
+        <div class="form-group">
+
+          <label for="birthdate">
+            Төрсөн огноо
+          </label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-calendar-days input-icon"></i>
+
+            <input
+              type="date"
+              id="birthdate"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- BIO -->
+        <div class="form-group">
+
+          <label for="bio">
+            Өөрийн тухай
+          </label>
+
+          <div class="input-wrapper textarea-wrapper">
+
+            <i class="fa-solid fa-comment input-icon textarea-icon"></i>
+
+            <textarea
+              id="bio"
+              rows="3"
+              placeholder="Өөрийн сонирхол, зорилгоо товч бичнэ үү..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- NOTIFICATION -->
+        <div class="notification-box">
+
+          <div class="notification-icon">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+
+          <div>
+
+            <strong>Мэдэгдэл авах</strong>
+
+            <p>
+              Сургалтын шинэ мэдээллийг и-мэйлээр авах
+            </p>
+
+          </div>
+
+          <label class="switch">
+
+            <input type="checkbox" checked>
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <!-- TERMS -->
+        <div class="form-group checkbox-group">
+
+          <label class="custom-checkbox">
+
+            <input type="checkbox" required>
+
+            <span class="checkmark"></span>
+
+            <span>
+              Би
+              <a href="#">үйлчилгээний нөхцөл</a>
+              болон
+              <a href="#">нууцлалын бодлого</a>-ыг
+              зөвшөөрч байна.
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <button
+          type="submit"
+          class="btn-submit">
+
+          <span>
+            Бүртгүүлэх
+          </span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+
+        <!-- FOOTER -->
+        <div class="form-footer">
+
+          <span>
+            Бүртгэлтэй юу?
+          </span>
+
+          <a href="#">
+            Нэвтрэх
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <!-- SUCCESS MESSAGE -->
+  <div id="successMessage" class="success-message">
+
+    <div class="success-icon">
+      <i class="fa-solid fa-check"></i>
     </div>
 
-    <!-- Загварласан Form (method="GET" болгож зассан) -->
-    <form action="#" method="GET" class="form-content">
-      
-      <!-- 1. Овог нэр -->
-      <div class="form-group">
-        <label for="fullname">Овог Нэр <span class="required">*</span></label>
-        <div class="input-wrapper">
-          <i class="fa-solid fa-user input-icon"></i>
-          <input type="text" id="fullname" placeholder="Батболдын Тэмүүлэн" required>
-        </div>
-      </div>
+    <div>
+      <strong>Амжилттай!</strong>
+      <p>Таны бүртгэл амжилттай илгээгдлээ.</p>
+    </div>
 
-      <!-- 2. И-мэйл хаяг (Position relative/absolute - Badge & Tooltip) -->
-      <div class="form-group">
-        <label for="email">И-мэйл хаяг <span class="required">*</span></label>
-        <div class="input-wrapper relative-box">
-          <i class="fa-solid fa-envelope input-icon"></i>
-          <input type="email" id="email" placeholder="name@example.com" required>
-          
-          <!-- Position absolute Badge -->
-          <span class="badge badge-success">Баталгаажсан</span>
-          
-          <!-- Position absolute Tooltip -->
-          <div class="tooltip">
-            <i class="fa-solid fa-circle-info"></i> Сургуулийн албан ёсны и-мэйлээ оруулна уу
-          </div>
-        </div>
-      </div>
+    <button onclick="closeMessage()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-      <!-- 3. Нууц үг -->
-      <div class="form-group">
-        <label for="password">Нууц үг <span class="required">*</span></label>
-        <div class="input-wrapper">
-          <i class="fa-solid fa-lock input-icon"></i>
-          <input type="password" id="password" placeholder="••••••••" required>
-        </div>
-      </div>
-
-      <!-- 4. Сонголт (Custom Select Dropdown) -->
-      <div class="form-group">
-        <label for="role">Хэрэглэгчийн төрөл</label>
-        <div class="input-wrapper">
-          <i class="fa-solid fa-graduation-cap input-icon"></i>
-          <select id="role">
-            <option value="student">Оюутан</option>
-            <option value="teacher">Багш</option>
-            <option value="guest">Зочин</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- 5. Checkbox сонголт -->
-      <div class="form-group checkbox-group">
-        <label class="custom-checkbox">
-          <input type="checkbox" required>
-          <span>Үйлчилгээний нөхцөлийг зөвшөөрч байна</span>
-        </label>
-      </div>
-
-      <!-- 6. Илгээх Товч (Animated Custom Button) -->
-      <button type="submit" class="btn-submit">
-        <span>Бүртгүүлэх</span>
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-
-    </form>
   </div>
+
+
+  <script>
+
+    // Password show / hide
+    function togglePassword() {
+
+      const password =
+        document.getElementById("password");
+
+      const icon =
+        document.getElementById("eyeIcon");
+
+      if (password.type === "password") {
+
+        password.type = "text";
+
+        icon.classList.remove("fa-eye");
+
+        icon.classList.add("fa-eye-slash");
+
+      } else {
+
+        password.type = "password";
+
+        icon.classList.remove("fa-eye-slash");
+
+        icon.classList.add("fa-eye");
+
+      }
+
+    }
+
+
+    // Password strength
+    const password =
+      document.getElementById("password");
+
+    const strengthText =
+      document.getElementById("strengthText");
+
+    const bars =
+      document.querySelectorAll(".strength-bars span");
+
+
+    password.addEventListener("input", function () {
+
+      const value = password.value;
+
+      let strength = 0;
+
+      if (value.length >= 6) strength++;
+
+      if (/[A-Z]/.test(value)) strength++;
+
+      if (/[0-9]/.test(value)) strength++;
+
+      if (/[^A-Za-z0-9]/.test(value)) strength++;
+
+
+      bars.forEach(bar => {
+        bar.classList.remove("active");
+      });
+
+
+      for (let i = 0; i < strength; i++) {
+        bars[i].classList.add("active");
+      }
+
+
+      if (strength === 0) {
+
+        strengthText.textContent =
+          "Нууц үгийн хүч: -";
+
+      } else if (strength === 1) {
+
+        strengthText.textContent =
+          "Нууц үгийн хүч: Сул";
+
+      } else if (strength === 2) {
+
+        strengthText.textContent =
+          "Нууц үгийн хүч: Дунд";
+
+      } else if (strength === 3) {
+
+        strengthText.textContent =
+          "Нууц үгийн хүч: Сайн";
+
+      } else {
+
+        strengthText.textContent =
+          "Нууц үгийн хүч: Маш сайн";
+
+      }
+
+    });
+
+
+    // Submit
+    document
+      .getElementById("registerForm")
+      .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        document
+          .getElementById("successMessage")
+          .classList.add("show");
+
+      });
+
+
+    function closeMessage() {
+
+      document
+        .getElementById("successMessage")
+        .classList.remove("show");
+
+    }
+
+  </script>
 
 </body>
 </html>
