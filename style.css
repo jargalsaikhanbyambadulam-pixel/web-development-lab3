@@ -1,0 +1,254 @@
+/* ==========================================
+   1. Google Fonts & CSS Variables (Өнгөний тохиргоо)
+   ========================================== */
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent-color: #10b981;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --card-bg: rgba(30, 41, 59, 0.85);
+  --input-bg: #0f172a;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --border-color: #334155;
+  --border-focus: #818cf8;
+  --font-family: 'Inter', sans-serif;
+  --shadow-glow: 0 10px 30px -10px rgba(99, 102, 241, 0.3);
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ==========================================
+   2. Box Model & Layout Structure
+   ========================================== */
+.card-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 460px;
+  padding: 36px 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+  transition: transform 0.3s ease;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.card-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.card-header p {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+/* ==========================================
+   3. Input controls, Box-Model & Typography
+   ========================================== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.required {
+  color: #ef4444;
+}
+
+/* Custom Input Wrapper & Icons */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-sub);
+  font-size: 15px;
+  transition: color 0.3s ease;
+  pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Pseudo-class (:focus & :hover) загварчлал */
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.input-wrapper input:focus + .input-icon,
+.input-wrapper select:focus ~ .input-icon,
+.input-wrapper:focus-within .input-icon {
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   4. Position: Relative / Absolute (Badge & Tooltip)
+   ========================================== */
+.relative-box {
+  position: relative;
+}
+
+/* Absolute Badge */
+.badge {
+  position: absolute;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--accent-color);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Absolute Tooltip (Hover хийхэд харагдана) */
+.tooltip {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: #334155;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: #334155 transparent;
+}
+
+.relative-box:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================
+   5. Checkbox & Interactive Button Effects
+   ========================================== */
+.checkbox-group {
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-sub);
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  margin-right: 10px;
+  accent-color: var(--primary-color);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Button & Hover Animations */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-submit i {
+  transition: transform 0.3s ease;
+}
+
+.btn-submit:hover i {
+  transform: translateX(4px);
+}

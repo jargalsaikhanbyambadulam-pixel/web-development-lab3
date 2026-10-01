@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 03 - Баяжуулсан HTML Form</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card-container">
+    <!-- Header хэсэг -->
+    <div class="card-header">
+      <h2>Бүртгэлийн Форм</h2>
+      <p>Лаборатори 03-ын гүнзгийрүүлсэн даалгавар</p>
+    </div>
+
+    <!-- Загварласан Form -->
+    <form action="#" method="POST" class="form-content">
+      
+      <!-- 1. Овог нэр (Icon-той) -->
+      <div class="form-group">
+        <label for="fullname">Овог Нэр <span class="required">*</span></label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user input-icon"></i>
+          <input type="text" id="fullname" placeholder="Батболдын Тэмүүлэн" required>
+        </div>
+      </div>
+
+      <!-- 2. И-мэйл хаяг (Position relative/absolute - Badge & Tooltip) -->
+      <div class="form-group">
+        <label for="email">И-мэйл хаяг <span class="required">*</span></label>
+        <div class="input-wrapper relative-box">
+          <i class="fa-solid fa-envelope input-icon"></i>
+          <input type="email" id="email" placeholder="name@example.com" required>
+          
+          <!-- Position absolute Badge -->
+          <span class="badge badge-success">Баталгаажсан</span>
+          
+          <!-- Position absolute Tooltip -->
+          <div class="tooltip">
+            <i class="fa-solid fa-circle-info"></i> Сургуулийн албан ёсны и-мэйлээ оруулна уу
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Нууц үг -->
+      <div class="form-group">
+        <label for="password">Нууц үг <span class="required">*</span></label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock input-icon"></i>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+      </div>
+
+      <!-- 4. Сонголт (Custom Select Dropdown) -->
+      <div class="form-group">
+        <label for="role">Хэрэглэгчийн төрөл</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-graduation-cap input-icon"></i>
+          <select id="role">
+            <option value="student">Оюутан</option>
+            <option value="teacher">Багш</option>
+            <option value="guest">Зочин</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 5. Нэмэлт: Checkbox & Радио сонголт -->
+      <div class="form-group checkbox-group">
+        <label class="custom-checkbox">
+          <input type="checkbox" required>
+          <span class="checkmark"></span>
+          Үйлчилгээний нөхцөлийг зөвшөөрч байна
+        </label>
+      </div>
+
+      <!-- 6. Илгээх Товч (Animated Custom Button) -->
+      <button type="submit" class="btn-submit">
+        <span>Бүртгүүлэх</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </form>
+  </div>
+
+</body>
+</html>
